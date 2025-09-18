@@ -53,7 +53,8 @@ const TaskForm = ({ setTasks }) => {
 
   return (
     <header className="app_header">
-      <form onSubmit={handleSubmit}>
+      <h1 className="heading">Task Finder</h1>
+      <form onSubmit={handleSubmit} className="task_form">
         <input
           type="text"
           name="task"

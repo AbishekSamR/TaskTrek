@@ -4,7 +4,27 @@
   background: #f9f9f9;
   border-radius: 5px;
   border: 1px solid #dfe3e6;
-  padding: 2px 10px;
-  margin-right: 10px;
+  padding: 6px 12px;
+  margin: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .tag {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 4px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  .tag {
+    font-size: 11px;
+    padding: 4px 8px;
+    margin: 3px;
+    border-radius: 4px;
+  }
 }

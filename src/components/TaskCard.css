@@ -1,7 +1,7 @@
 .task_card {
   width: 100%;
   min-height: 100px;
-  border: 1px solid#dcdcdc;
+  border: 1px solid #dcdcdc;
   border-radius: 10px;
   padding: 15px;
   margin: 15px 0;
@@ -17,6 +17,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
+}
+
+.task_card_tags {
+  display: flex;
+  flex-wrap: wrap; /* ✅ allows tags to move to next line */
+  gap: 5px;
 }
 
 .task_delete {
@@ -42,4 +49,52 @@
 
 .task_delete:hover .delete_icon {
   opacity: 80%;
+}
+
+/* 📱 Tablet screens */
+@media (max-width: 768px) {
+  .task_text {
+    font-size: 16px;
+  }
+
+  .task_card {
+    padding: 12px;
+  }
+
+  .task_delete {
+    width: 30px;
+    height: 30px;
+  }
+
+  .delete_icon {
+    width: 18px;
+  }
+}
+
+/* 📱 Mobile screens */
+@media (max-width: 480px) {
+  .task_card {
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .task_text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .task_card_bottom_line {
+    flex-direction: column; /* ✅ stacks tags & delete button */
+    align-items: flex-start;
+  }
+
+  .task_delete {
+    align-self: flex-end; /* keeps delete button to the right */
+    width: 28px;
+    height: 28px;
+  }
+
+  .delete_icon {
+    width: 16px;
+  }
 }

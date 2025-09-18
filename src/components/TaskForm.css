@@ -1,55 +1,136 @@
 .app_header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #dcdcdc;
-}
-
-.app_header > form {
-  width: 40%;
-}
-
-.task_input {
-  font-size: 20px;
-  font-weight: 500;
-  background: #f9f9f9;
-  color: #000;
-  border: 1px solid #dfe3e6;
-  border-radius: 5px;
-  padding: 8px 12px;
-  margin-bottom: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.task_input::placeholder {
-  color: #686868;
+/* Form base */
+.task_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
+.heading {
+  margin: 30px 0;
+  font-weight: 600;
+}
+
+/* Input */
+.task_input {
+  width: 530px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Bottom row */
 .task_form_bottom_line {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
+/* Tags (left) */
+.task_tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Controls (right: select + button) */
+.task_controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Select */
 .task_status {
-  font-size: 16px;
-  font-weight: 500;
-  border: 1px solid #999;
-  border-radius: 5px;
-  width: 120px;
-  height: 40px;
-  padding: 0 5px;
+  margin-right: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
+/* Button */
 .task_submit {
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #6457f9;
-  color: #fff;
-  border-radius: 5px;
-  height: 40px;
-  padding: 3px 13px;
-  margin-left: 10px;
+  padding: 10px 15px;
   border: none;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.task_submit:hover {
+  background-color: #43a047;
+}
+
+/* ✅ RESPONSIVENESS */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .task_form_bottom_line {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .task_form {
+    margin-top: 60px;
+  }
+
+  .task_controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .task_status,
+  .task_submit {
+    width: 100%;
+  }
+
+  .task_status {
+    margin-bottom: 8px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .task_form {
+    margin-top: 20px;
+  }
+
+  .task_input {
+    font-size: 14px;
+    padding: 10px;
+    width: 300px;
+  }
+
+  .task_status,
+  .task_submit {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 100px;
+  }
+
+  .task_status {
+    margin-bottom: 8px;
+  }
+
+  .task_tags {
+    gap: 6px;
+  }
+
+  .heading {
+    margin-top: 100px;
+    margin-bottom: 0px;
+  }
 }

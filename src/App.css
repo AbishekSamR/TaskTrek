@@ -1,15 +1,44 @@
 .app {
   display: grid;
   grid-template-rows: 150px auto;
+  min-height: 100vh;
 }
 
 .app_main {
   display: flex;
   justify-content: space-evenly;
+  align-items: flex-start;
   padding: 20px 8%;
+  gap: 20px;
 }
 
 .task_column {
   width: 33.33%;
-  margin: 20px;
+  margin: 20px 0;
+}
+
+/* 📱 Tablet screens */
+@media (max-width: 1024px) {
+  .app_main {
+    padding: 15px 4%;
+    gap: 15px;
+  }
+
+  .task_column {
+    width: 45%; /* ✅ 2 columns layout on medium screens */
+    margin: 15px 0;
+  }
+}
+
+/* 📱 Mobile screens */
+@media (max-width: 768px) {
+  .app_main {
+    flex-direction: column; /* ✅ stack vertically */
+    padding: 10px;
+  }
+
+  .task_column {
+    width: 100%; /* ✅ full width */
+    margin: 10px 0;
+  }
 }
